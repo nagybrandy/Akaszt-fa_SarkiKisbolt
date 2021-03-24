@@ -1,18 +1,16 @@
 
-let words = ["szavak", "nagyon", "jok"];
+let words = ["mikorleszdndbucsi", "carpetustakaranép", "kajamárnagyonéhes", "whyudodis", "ez", "még", "mindig", "nem", "tíz", "szó", "tavasziszünet"];
 let random = Math.floor(Math.random() * (words.length)); 
 let megoldas = words[random];
 let megoldnyilv = "";
 let hibak = 0;
 let hibalista = []
 
-console.log(megoldas[0])
 for(let i = 0; i < megoldas.length; i++) {
   megoldnyilv += "_";
 }
 let feladva = document.getElementById("feladv") 
 feladva.innerHTML = "A feladvány: " + megoldnyilv
-
 
 function Tipp(char){
   if(hibalista.indexOf(document.getElementById("megoldas").value) != -1){
@@ -25,7 +23,7 @@ function Tipp(char){
         if(kar == megoldas[i]){
           megoldnyilv = megoldnyilv.substring(0,i) + kar + megoldnyilv.substring(i+1,megoldas.length)
           feladva.innerHTML = "A feladvány: " + megoldnyilv
-          console.log(megoldnyilv)
+
           van = true;
         }
       }
@@ -52,5 +50,3 @@ function Tipp(char){
     }
   }
 }
-
-console.log(megoldnyilv)
