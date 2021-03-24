@@ -1,15 +1,16 @@
-var words = ["szavak", "nagyon", "jok"];
-var random = Math.floor(Math.random() * (words.length)); 
-var megoldas = words[random];
-var megoldnyilv = "";
-var hibak = 0;
-var hibalista = []
+
+let words = ["szavak", "nagyon", "jok"];
+let random = Math.floor(Math.random() * (words.length)); 
+let megoldas = words[random];
+let megoldnyilv = "";
+let hibak = 0;
+let hibalista = []
 
 console.log(megoldas[0])
-for(var i = 0; i < megoldas.length; i++) {
+for(let i = 0; i < megoldas.length; i++) {
   megoldnyilv += "_";
 }
-var feladva = document.getElementById("feladv") 
+let feladva = document.getElementById("feladv") 
 feladva.innerHTML = "A feladvány: " + megoldnyilv
 
 
@@ -18,9 +19,9 @@ function Tipp(char){
     alert("Ezt már egyszer tippelted és akkor sem volt jó! :c")
   } else {
     if(document.getElementById("megoldas").value.length == 1){
-      var van = false
-      var kar = document.getElementById("megoldas").value;
-      for(var i = 0; i < megoldas.length;i++) {
+      let van = false
+      let kar = document.getElementById("megoldas").value;
+      for(let i = 0; i < megoldas.length;i++) {
         if(kar == megoldas[i]){
           megoldnyilv = megoldnyilv.substring(0,i) + kar + megoldnyilv.substring(i+1,megoldas.length)
           feladva.innerHTML = "A feladvány: " + megoldnyilv
@@ -31,10 +32,10 @@ function Tipp(char){
         if(!van){
         alert("Ez a karakter nem szerepel a szóban!")
         hibalista.push(document.getElementById("megoldas").value)
-        var hibalistaelem = document.getElementById("hibalista") 
+        let hibalistaelem = document.getElementById("hibalista") 
         hibalistaelem.innerHTML += hibalista[hibak] + ", "
         hibak++
-        var hibakelem = document.getElementById("hibak") 
+        let hibakelem = document.getElementById("hibak") 
         hibakelem.innerHTML = "Hibás tippek száma: " + hibak
         if(hibak==11){
           alert("Vesztettél! :(")
